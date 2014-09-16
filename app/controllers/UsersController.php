@@ -14,7 +14,7 @@ class UsersController extends BaseController{
 
 	public function postCreate(){
 		
-		return Input::all();
+		
 		$validator=Validator::make(Input::all(),User::$rules);
 
 		if($validator->passes())
@@ -22,7 +22,7 @@ class UsersController extends BaseController{
 			$user=new User;
 			$user->firstname=Input::get('firstname');
 			$user->lastname=Input::get('lastname');
-			$user->email=Input::get('email');
+			$user->email=Input::get('Email');
 			$user->password=Hash::make(Input::get('password'));
 			$user->telephone=Input::get('telephone');
 			$user->address=Input::get('address');
@@ -44,6 +44,8 @@ class UsersController extends BaseController{
 	public function postSignin(){
 		if(Auth::attempt(['email'=>Input::get('email'),'password'=>Input::get('password')]))
 		{
+			$userid=Auth::user()->id;
+			
 			return Redirect::to('/')->with('message','You are signed in');
 		}	
 		return Redirect::to('users/signin')

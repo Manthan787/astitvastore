@@ -15,11 +15,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
-	protected $fillable=['firstname', 'lastname', 'email','telephone','address'];
+	protected $fillable=['firstname', 'lastname', 'Email','telephone','address'];
 	public static $rules=[
 		'firstname'=>'required|min:2|alpha',
 		'lastname'=>'required|min:2|alpha',
-		'email'=>'required|email|unique:users',
+		'Email'=>'required|email|unique:users',
 		'password'=>'required|between:8,12|alpha_num|confirmed',
 		'password_confirmation'=>'required|between:8,12|alpha_num',
 		'telephone'=>'required|between:10,12',

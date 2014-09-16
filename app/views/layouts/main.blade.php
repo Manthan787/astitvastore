@@ -25,9 +25,7 @@
         Header Area
         ==================================================================
         -->
-@if(Session::has('message'))
-<p>{{Session::get('message')}}</p>
-@endif
+
         <div id="header">
             <div class="container">
                 <div class="row">
@@ -53,166 +51,127 @@
                                     <i class="icon-user ten_padding_right"></i>{{ HTML::link('users/signin','Sign In') }}</a></p>
                                 </li>
                                 @endif
+                                @if(!Auth::check())
                                 <li>
-                                    <i class="icon-empty ten_padding_right"></i><a href="cart.html">4</a>
+                                    <i class="icon-empty ten_padding_right"></i><a href="/cart">0</a>
                                 </li>
                                 <li>
                                     <span class="cart_total">
-                                        $169
+                                        0
                                     </span>
+                                </li>
+                                @endif
+
+                                @if(Auth::check())
+                                
+                                <li>
+                                    <i class="icon-empty ten_padding_right"></i><a href="/cart">{{ $count }}</a>
+                                </li>
+                                <li>
+                                    <span class="cart_total">
+                                        Rs. {{ $total }}
+                                    </span>
+                                </li>
                                     <div class="cart_dropdown">
                                         <div class="box">
                                             <ul class="list">
+                                            @foreach($orders as $order)
                                                 <li class="item clearfix">
                                                     <figure class="pull-left">
-                                                        <a href="product.html">
-                                                            <img src="images/products/small13.png" width="55" height="60" alt=""/>
+                                                        <a href="/view/{{ $order->product_id }}">
+                                                            <img src="{{ $order->product->image }}" style="width:55px; height: 50px" alt=""/>
                                                         </a>
                                                     </figure>
                                                     <div class="content">
                                                         <div class="title">
-                                                            Fresh Shirt-Shortsleeve by <a href="category_template_2.html">Carhartt</a>
+                                                            {{$order->product->title}}
                                                         </div>
                                                         <div class="price">
-                                                            35.00€
+                                                            {{ $order->product->price }}
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li class="item clearfix">
-                                                    <figure class="pull-left">
-                                                        <a href="product.html">
-                                                            <img src="images/products/small14.png" width="55" height="60" alt=""/>
-                                                        </a>
-                                                    </figure>
-                                                    <div class="content">
-                                                        <div class="title">
-                                                            AV Native American by <a href="category_template_2.html">Vans</a>
-                                                        </div>
-                                                        <div class="price">
-                                                            65.00€
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="item clearfix">
-                                                    <figure class="pull-left">
-                                                        <a href="product.html">
-                                                            <img src="images/products/small15.png" width="55" height="60" alt=""/>
-                                                        </a>
-                                                    </figure>
-                                                    <div class="content">
-                                                        <div class="title">
-                                                            Coolwood T-shirt by <a href="category_template_2.html">Billabong</a>
-                                                        </div>
-                                                        <div class="price">
-                                                            31.00€
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                @endforeach
+                                                
                                             </ul>
                                             
                                             <div class="total_wrapper">
                                                 <div class="total">
                                                     <div class="uppercase">Subtotal</div>
-                                                    <div class="value">131.00€</div>
+                                                    <div class="value">Rs. {{ $total }}</div>
                                                 </div>
+                                                @if($total!=0)
                                                 <a href="cart.html" class="button darkgrey">Checkout</a>
+                                                @endif
                                             </div>
                                             
                                         </div>
                                     </div>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                     </div>
                     
                 </div>
                 <div class="row ten_margin_top">
-                    <div class="span3">
-                        <button type="button" class="dd-menu-trigger btn btn-navbar toggle-navbar hidden-desktop" data-toggle="collapse" data-target=".nav-collapse">
-                            <a href="#"><span class="lightgray uppercase nomargin">Select</span><h4 class="uppercase">department<span class="caret darkgrey"></span></h4></a>
-                        </button>
-                        <nav class="main-nav nav-collapse collapse" >
-                            <ul role="navigation" class="nav light-layout">
-                                <li class="complete-collapse">
-                                    <a href="#" class="hidden-phone hidden-tablet"><span class="lightgray uppercase nomargin">Select</span><h4 class="uppercase">department<span class="caret darkgrey"></span></h4></a>
-                                    <ul class="span12">
-                                        <li>
-                                            <ul>
-                                                <li>
-                                                    <a href="category_template_1.html" class="fancy-zoom-in-rotate"><span class="fancy-zoom-in-rotate-text uppercase">Men Wear</span><img src="images/men-wear.jpg" width="300" height="120" alt="mean wear" /></a>
-                                                </li>
-                                                <li>
-                                                    <a href="account.html" class="has-separator"><strong>Account</strong></a>
-                                                    <a href="address.html" class="has-separator"><strong>Address</strong></a>
-                                                    <a href="#" class="has-separator"><strong>Bestseller </strong></a>
-                                                </li>
-                                                <li>
-                                                    <a href="blog_single_2.html" class="has-separator">Single Post Full Width</a>
-                                                    <a href="blog_single.html" class="has-separator">Single Post</a>
-                                                </li>
-                                                <li>
-                                                    <a href="blog.html" class="has-separator">Blog</a>
-                                                    <a href="shipping_information.html" class="has-separator">Shipping Information</a>
-                                                    <a href="shipping.html" class="has-separator">Shipping</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="has-separator">Pants</a>
-                                                    <a href="#" class="has-separator">Headwear</a>
-                                                    <a href="#" class="has-separator">Accesories</a>
-                                                    <a href="#" class="has-separator">Shoes</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <ul>
-                                                <li>
-                                                    <a href="category_template_2.html" class="fancy-zoom-in-rotate"><span class="fancy-zoom-in-rotate-text uppercase">Women Wear</span><img src="images/women-wear.jpg" width="300" height="120" alt="women wear" /></a>
-                                                </li>
-                                                <li>
-                                                    <a href="cart.html" class="has-separator"><strong>Cart</strong></a>
-                                                    <a href="home.html" class="has-separator"><strong class="mustard">Menu V1</strong></a>
-                                                    <a href="home_2.html" class="has-separator"><strong class="mustard">Menu V2 </strong></a>
-                                                </li>
-                                                <li>
-                                                    <a href="category_template_1.html" class="has-separator">Category Page V1</a>
-                                                    <a href="category_template_2.html" class="has-separator">Category Page V2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="login.html" class="has-separator">Login</a>
-                                                    <a href="order_confirmation.html" class="has-separator">Order Confirmation</a>
-                                                    <a href="product.html" class="has-separator">Product</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="has-separator">Pants</a>
-                                                    <a href="summary.html" class="has-separator">Summary</a>
-                                                    <a href="home_popup.html" class="has-separator"><strong class="mustard">Popup Screen</strong></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <ul>
-                                                <li>
-                                                    <a href="category_template_1.html" class="fancy-zoom-in-rotate"><span class="fancy-zoom-in-rotate-text fancy-zoom-in-rotate-smaller-text uppercase">Shoes</span><img src="images/shoes.jpg" width="260" height="50" alt="shoes wear" /></a>
-                                                </li>
-                                                <li>
-                                                    <a href="category_template_2.html" class="fancy-zoom-in-rotate"><span class="fancy-zoom-in-rotate-text fancy-zoom-in-rotate-smaller-text uppercase">Outlet</span><img src="images/outlet.jpg" width="260" height="50" alt="outlet wear" /></a>
-                                                </li>
-                                                <li>
-                                                    <a href="category_template_1.html" class="fancy-zoom-in-rotate"><span class="fancy-zoom-in-rotate-text fancy-zoom-in-rotate-smaller-text uppercase"><strong>Sale</strong></span><img src="images/sale.jpg" width="260" height="80" alt="sale" /></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
                     <div class="span9">
                         <form class="form-search clearfix">
                             <input type="text" class="input-medium search_input pull-left" placeholder="Product search">
                             <button type="submit" class="search_button">Search <i class="icon-search icon-white"></i></button>
                         </form>
                     </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-navbar hidden-desktop" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar menu-toggle fa fa-bars"></span>
+                    </button>
+                    <nav class="menu main-nav nav-collapse collapse span12">
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                                <span class="arrow-down">▼</span>
+                            </li>
+                            <li class="has-children">
+                                <a href="home_2.html">Categories</a>
+                                <span class="arrow-down">▼</span>
+                                <ul class="span3">
+                                @foreach($catnav as $cat)
+                                 <li>
+                                        <a href="/category/{{ $cat->name }}">{{ $cat->name }}</a>
+                                 </li>
+                                @endforeach 
+                                </ul>
+                            </li>
+                            @if(Auth::check())
+                            <li>
+                                <a href="/cart">Cart</a>
+                                <span class="arrow-down">▼</span>
+                            </li>
+                            @endif
+
+                            @if(Auth::check()&&Auth::user()->admin==1)
+                            <li class="has-children">
+                                <a href="home_2.html">Administrate</a>
+                                <span class="arrow-down">▼</span>
+                                <ul class="span3">
+                                
+                                 <li>
+                                        <a href="/admin/categories">Manage Categories</a>
+                                 </li>
+                                
+                                <li>
+                                        <a href="/admin/products">Manage Products</a>
+                                 </li>
+                                
+                                </ul>
+                            </li>
+                            @endif
+                            
+                        </ul>
+                    </nav>
+                </div>
+                   
                 </div>     
 
             </div>
@@ -232,6 +191,10 @@ Featured Slider Area
     Featured Banner
     ==================================================================
     -->
+    @if(Session::has('message'))
+<p class="mustard" align="center">{{Session::get('message')}}</p>
+@endif
+
     @yield('content')
 
     
@@ -711,8 +674,22 @@ Featured Slider Area
 
 </div>
 
-
-
+-->
+<div class="fullwidth clearfix newsletter_cta twenty_margin_top">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="span8">
+                <h3 class="pull-left uppercase font-light lightgray">subscribe  to newsletter <span class="mustard">get a 10% discount on 1st purchase</span></h3>
+            </div>
+            <div class="span4">
+                <form class="form-newsletter clearfix">
+                    <input type="text" class="input-medium newsletter_input pull-left" placeholder="your email address">
+                    <button type="submit" class="newsletter_button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- 
 ==================================================================
 Footer
@@ -722,27 +699,7 @@ Footer
 <div id="footer">
     <div class="container">
         <div class="row clearfix">
-            <div class="span5">
-                <h4 class="uppercase font-light darkgrey">Brands</h4>
-                <a class="darkgrey" href="#">Adidas</a>, <a class="darkgrey" href="#">Adio</a>, <a class="darkgrey" href="#">Birdhouse</a>, <a class="darkgrey" href="#">C1rca</a>, <a class="darkgrey" href="#">Calvin Klein</a>, <br/><a class="darkgrey" href="#">Cheap Monday</a>, <a class="darkgrey" href="#">Dickies</a>, <a class="darkgrey" href="#">Element</a>, <a class="darkgrey" href="#">Emerica</a>, <a class="darkgrey" href="#">Fallen</a>,<br/> <a class="darkgrey" href="#">Herschel</a>, <a class="darkgrey" href="#">HUF</a>, <a class="darkgrey" href="#">Irie Daily</a>, <a class="darkgrey" href="#">Lee</a>, <a class="darkgrey" href="#">Levis</a>, <a class="darkgrey" href="#">LRG</a>, <a class="darkgrey" href="#">Mishka</a>, <a class="darkgrey" href="#">Nike</a>,<br/> <a class="darkgrey" href="#">Obey</a>, <a class="darkgrey" href="#">Puma</a>, <a class="darkgrey" href="#">Ray-ban</a>, <a class="darkgrey" href="#">Roxy</a>, <a class="darkgrey" href="#">Quicksilver</a>, <a class="darkgrey" href="#">Supra</a>,<br/> <a class="darkgrey" href="#">Supreme</a>, <a class="darkgrey" href="#">The Hundreds</a>, <a class="darkgrey" href="#">Vans</a>, <a class="darkgrey" href="#">Volcom</a>
-            </div>
-            <div class="span2">
-                <h4 class="uppercase font-light darkgrey">Customer Service</h4>
-                <a href="#" class="darkgrey">Help</a><br/>
-                <a href="#" class="darkgrey">FAQ</a><br/>
-                <a href="#" class="darkgrey">Gift Cards</a><br/>
-                <a href="#" class="darkgrey">Order Status</a><br/>
-                <a href="#" class="darkgrey">Free Shipping</a><br/>
-                <a href="#" class="darkgrey">Returns & Exchanges</a><br/>
-            </div>
-            <div class="span2">
-                <h4 class="uppercase font-light darkgrey">Information</h4>
-                <a href="#" class="darkgrey">Shipping </a><br/>
-                <a href="#" class="darkgrey">Returns </a><br/>
-                <a href="#" class="darkgrey">Payments </a><br/>
-                <a href="#" class="darkgrey">Contact </a><br/>
-            </div>
-            <div class="span3">
+            <div class="span12" align="center">
                 <h4 class="uppercase font-light darkgrey">Stay connected</h4>
                 <ul class="inline social_footer">
                     <li class="nopadding_left">

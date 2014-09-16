@@ -5,7 +5,7 @@ categories
 @stop
 
 @section('content')
-<div id="admin">
+<div class="container">
 <h1>Categories</h1>
 @foreach($categories as $category)
 	<ul>

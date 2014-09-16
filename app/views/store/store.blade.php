@@ -118,7 +118,7 @@ Store
                         {{ $product->title }}<br/> 
                     </p>
                     <span class="price white">
-                        {{ $product->price }}
+                       Rs. {{ $product->price }}
                     </span>
                 </div>
                 </div>

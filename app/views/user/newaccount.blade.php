@@ -24,8 +24,10 @@ Create New Account
                 </div>
                 <div class="element row">
                     <label>Email</label>
-                    <input type="text" name="email" />
+                    <input type="text" name="Email" />
                 </div>
+
+                
                 
                 <div class="element row">
                     <label >Password</label>

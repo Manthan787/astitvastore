@@ -43,7 +43,7 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('login');
+			return Redirect::guest('/users/signin')->with('message','You have to be signed in to be able to perform this task!');
 		}
 	}
 });

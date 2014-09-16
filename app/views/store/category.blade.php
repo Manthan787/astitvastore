@@ -4,26 +4,38 @@
 @stop
 
 @section('content')
-<h2>{{ $cat->name }} </h2>
-<hr>
-@foreach($products as $product)
+<div id="category_template_1">
 
-					<div class="product">
-                        <a href="/view/{{ $product->id }}">{{ HTML::image($product->image, $product->title, ['class'=>'feature','width'=>'200', 'height'=>'250']) }}</a>
+    <div class="container">
 
-                        <h3><a href="/view/{{ $product->id }}">{{ $product->title }}</a></h3>
+        <div id="isotope" class="row twenty_margin_top clearfix">
+        @foreach($products as $product)
+          <div class="span3 product_image clearfix shoes sweaters">
+                <div class="flip_image">
+                    <a href="/view/{{ $product->id }}">
+                        <div class="front_image">
+                            <img src="/{{ $product->image }}" alt="" />
+                        </div>
+                        <div class="back_image">
+                            <img src="/{{ $product->backimage }}" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="description clearfix">
+                    <p class="white nomargin">
+                        {{ $product->title }}<br/> 
+                    </p>
+                    <span class="price white">
+                        {{ $product->price }}
+                    </span>
+                </div>
+            </div>
+        @endforeach
 
-                        <p></p>
 
-                        <h5>Availability: <span class="instock">In Stock</span></h5>
-
-                        <p>
-                            <a href="#" class="cart-btn">
-                                <span class="price">Rs{{ $product->price }}</span>
-                                 {{ HTML::image('img/white-cart.gif', 'ADD TO CART') }}
-                                  ADD TO CART
-                            </a>
-                        </p>
-                    </div>
-      @endforeach              
+        </div>
+    </div>
+</div>
+<br>
+<br>
 @stop
