@@ -10,14 +10,12 @@ cart
         <div class="cart_nav span12">
             <ul class="list row">
                 <li class="item span3 current">
-                    <a href="/checkout">Shopping cart</a>
+                    Shopping cart
                 </li>
                 <li class="item span3">
-                    <a href="/checkout/address">Delivery address</a>
+                    Delivery address
                 </li>
-                <li class="item span3">
-                    <a href="/checkout/confirm">confirm Order</a>
-                </li>
+                
             </ul>
         </div>
     </div>

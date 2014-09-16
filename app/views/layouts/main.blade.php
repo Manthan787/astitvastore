@@ -40,7 +40,7 @@
                             <ul class="inline pull-right">
                                 @if(Auth::check())
                                 <li>
-                                    <i class="icon-user ten_padding_right"></i>{{ HTML::link('users/',Auth::user()->firstname) }}</a></p>
+                                    <i class="icon-user ten_padding_right"></i>{{ Auth::user()->firstname }}</a></p>
                                 </li>
                                 <li>
                                 {{ HTML::link('users/signout','Sign Out') }}
@@ -102,7 +102,7 @@
                                                     <div class="value">Rs. {{ $total }}</div>
                                                 </div>
                                                 @if($total!=0)
-                                                <a href="cart.html" class="button darkgrey">Checkout</a>
+                                                <a href="/checkout" class="button darkgrey">Checkout</a>
                                                 @endif
                                             </div>
                                             
@@ -116,12 +116,7 @@
                     
                 </div>
                 <div class="row ten_margin_top">
-                    <div class="span9">
-                        <form class="form-search clearfix">
-                            <input type="text" class="input-medium search_input pull-left" placeholder="Product search">
-                            <button type="submit" class="search_button">Search <i class="icon-search icon-white"></i></button>
-                        </form>
-                    </div>
+                    
                 </div>
                 <div class="row">
                     <button type="button" class="btn btn-navbar hidden-desktop" data-toggle="collapse" data-target=".nav-collapse">
