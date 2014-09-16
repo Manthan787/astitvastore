@@ -24,7 +24,8 @@ Create New Account
                 </div>
                 <div class="element row">
                     <label>Email</label>
-                    <input type="text" name="Email" />
+                    <input type="text" name="Email" value="{{ Input::old('Email') }}" /><br>
+                    {{ $errors->first('Email') }}
                 </div>
 
                 
@@ -42,12 +43,6 @@ Create New Account
     
                 </div>
                 
-                <div class="element row">
-                    <label>Address</label>
-                    &nbsp&nbsp&nbsp&nbsp&nbsp<textarea  name="address" value="{{ Input::old('address') }}"></textarea><br>
-                    {{ $errors->first('address') }}
-    
-                </div>
                 <div class="element row">
                     <label >Phone</label>
                     <input  type="text" name="telephone" value="{{ Input::old('telephone') }}" /><br>

@@ -25,7 +25,6 @@ class UsersController extends BaseController{
 			$user->email=Input::get('Email');
 			$user->password=Hash::make(Input::get('password'));
 			$user->telephone=Input::get('telephone');
-			$user->address=Input::get('address');
 			$user->save();
 
 			return Redirect::to('users/signin')->with('message','Account created Successfully. Please Sign in');

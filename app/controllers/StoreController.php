@@ -6,13 +6,13 @@ class StoreController extends BaseController{
 	public function __construct(){
 		Parent::__construct();
 		//$this->beforeFilter('csrf',['on'=>'post']);
-		$this->beforeFilter('auth',['only'=>['postAddtocart','getCart']]);
+		$this->beforeFilter('auth',['only'=>['postAddtocart','getCart','getCheckout','postCheckout']]);
 
 	}
 
 	public function getIndex(){
 		
-		$products=Product::take(4)->orderBy('created_at','DESC')->get();
+		$products=Product::take(8)->orderBy('created_at','DESC')->get();
 		return View::make('store.store')->with('products',$products);
 	}
 
@@ -90,4 +90,6 @@ class StoreController extends BaseController{
 		}
 		return Redirect::back()->with('message','Could not delete the item from your cart. Please Try again. ');
 	}
+
+
 }

@@ -8,6 +8,6 @@ Route::get('/404',function()
 Route::controller('users','UsersController');
 Route::controller('admin/categories', 'CategoriesController');
 Route::controller('admin/products','ProductsController');
-
+Route::controller('checkout','CheckoutController');
 Route::controller('/','StoreController');
 

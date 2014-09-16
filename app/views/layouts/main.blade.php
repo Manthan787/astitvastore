@@ -79,7 +79,8 @@
                                                 <li class="item clearfix">
                                                     <figure class="pull-left">
                                                         <a href="/view/{{ $order->product_id }}">
-                                                            <img src="{{ $order->product->image }}" style="width:55px; height: 50px" alt=""/>
+                                                            {{ HTML::image($order->product->image,null,['height'=>'50','width'=>'55']) }}
+                                                            
                                                         </a>
                                                     </figure>
                                                     <div class="content">
@@ -87,7 +88,7 @@
                                                             {{$order->product->title}}
                                                         </div>
                                                         <div class="price">
-                                                            {{ $order->product->price }}
+                                                           Rs. {{ $order->product->price }}
                                                         </div>
                                                     </div>
                                                 </li>
@@ -703,30 +704,14 @@ Footer
                 <h4 class="uppercase font-light darkgrey">Stay connected</h4>
                 <ul class="inline social_footer">
                     <li class="nopadding_left">
-                        <a href="#">
-                            <img src="images/social/facebook.png" widht="29" height="28" alt="" />
+                        <a href="https://www.facebook.com/pages/Astitva-Store/293727637497913">
+
+                            {{ HTML::image('images/social/facebook.png',null,['class'=>'fb']) }}
+                        
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <img src="images/social/twitter.png" widht="29" height="28" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="images/social/pinterest.png" widht="29" height="28" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="images/social/instagram.png" widht="29" height="28" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="images/social/flickr.png" widht="29" height="28" alt="" />
-                        </a>
-                    </li>
+                    
+                    
                 </ul>
             </div>
         </div>
@@ -757,59 +742,7 @@ Copyright Information
     </div>
 </div>
 
-<!-- Popup -->
-<div class="popup">
-    <div class="mask"></div>
-    <div class="box span9 clearfix">
-        <i class="close">&#9587;</i>
-        <figure class="product_fb">
-            <img src="images/products/prod-detail.png" alt="">
-        </figure>
-    </div>
-</div>
-<!-- /Popup -->
 
-<!-- Popup 2-->
-<div class="container popup offer">
-    <div class="mask"></div>
-    <div class="row">
-        <div class="box span9 clearfix">
-            <i class="close">&#9587;</i>
-            <div class="row">
-                <figure class="promo span4">
-                    <img src="images/subscribe_promo.jpg" alt=""/>
-                </figure>
-                <div class="content span5">
-                    <div class="header">
-                        <span class="off font-oswald special-text">20%</span>
-                        <span class="uppercase text">one day 
-                            <span class="special-text">discount</span> every month
-                        </span>
-                    </div>
-                    <div class="main">
-                        <h4 class="uppercase font-light">Subscribe and don’t miss it!</h4>
-                        <form>
-                            <input type="text" placeholder="Your Email" name="email" class="uppercase"/>
-                            <input type="submit" value="Send" class="button mustard"/>
-                        </form>
-                        <div class="social ten_margin_top">
-                            <span class="lbl uppercase">recommend for friends</span>
-                            <div class="icons pull-right">
-                                <a href="#" class="dib">
-                                    <img src="images/social/facebook.png" alt=""/>
-                                </a>
-                                <a href="#" class="dib">
-                                    <img src="images/social/twitter.png" alt=""/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /Popup 2-->
 {{ HTML::script('js/jquery.isotope.min.js') }}
 {{ HTML::script('js/jquery-ui-custom.min.js') }}
 {{ HTML::script('js/jquery.cookie.js') }} 

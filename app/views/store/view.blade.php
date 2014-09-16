@@ -24,20 +24,20 @@
                 <ul class="thumbs">
                     <li class="item dib">
                         <a href="#">
-                            <img src="/{{ $product->backimage }}" alt=""/>
+                            <img src="{{ $product->backimage }}" alt=""/>
                         </a>
                     </li>
                     @if($product->image3)
                     <li class="item dib">
                         <a href="#">
-                            <img src="/{{ $product->image3 }}" alt=""/>
+                            <img src="{{ $product->image3 }}" alt=""/>
                         </a>
                     </li>
                     @endif
                     @if($product->image4)
                     <li class="item dib">
                         <a href="#">
-                            <img src="/{{ $product->image4 }}" alt=""/>
+                            <img src="{{ $product->image4 }}" alt=""/>
                         </a>
                     </li>
                     @endif
@@ -190,10 +190,10 @@
             <div class="flip_image">
                 <a href="/view/{{ $rp->id }}">
                     <div class="front_image">
-                        <img src="/{{ $rp->image }}" alt="">
+                       {{ HTML::image($rp->image, $rp->title) }}
                     </div>
                     <div class="back_image">
-                        <img src="/{{ $rp->backimage }}" alt="">
+                        {{ HTML::image($rp->backimage, $rp->title) }}
 
                     </div>
                 </a>

@@ -20,6 +20,7 @@ class CreateOrderItemTable extends Migration {
 			$table->float('price');
 			$table->string('size');
 			$table->integer('quantity');
+			$table->integer('order_id');
 			$table->boolean('status')->default(0);
 			$table->timestamps();
 		});
