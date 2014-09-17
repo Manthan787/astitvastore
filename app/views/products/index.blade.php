@@ -88,8 +88,8 @@ Products
 	
 	<ul>
 		<li>
-		<img src="/{{ $product->image }}" style="width:15%; height: 12%"/>
-		{{ $product->title }} - 
+		<img src="{{ $product->image }}" style="width:15%; height: 12%"/>
+		<a href="/admin/products/edit/{{ $product->id }}"> {{ $product->title }}</a>- 
 		{{ Form::open(['url'=>'admin/products/delete', 'method'=>'post','class'=>'form-inline'])}}
 		{{ Form::hidden('id', $product->id)}}
 		{{ Form::submit('Delete',['class'=>'button'])}}

@@ -104,5 +104,9 @@ class ProductsController extends BaseController {
 			->with('message','Error Deleting This Product.Please Try again later.');
 		}
 
+
+		
+		
+
 		
 }

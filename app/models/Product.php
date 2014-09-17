@@ -9,7 +9,7 @@ class Product extends Eloquent {
 	public static $rules=[
 	'category_id'=>'required|integer',
 	'title'=>'required|min:3',
-	'description'=>'required|min:20',
+	'description'=>'min:10',
 	'price'=>'required|numeric',
 	'availability'=>'integer',
 	'image'=>'required|image|mimes:jpeg,jpg,png,gif',

@@ -22,7 +22,9 @@ Orders
                 <tbody>
                     <tr>
                         <td>
+                        <a href="/admin/orders/item/{{ $ord->id }}">
                         <span>{{ $ord->id }}</span>
+                        </a>
                         </td>
                         <td>
                             <span>{{ $ord->user->firstname }} {{ $ord->user->lastname }}</span>
@@ -42,22 +44,6 @@ Orders
                         
                     </tr>
                 </tbody>
-                <ul>
-                	@foreach($ord->items() as $item)
-                	<li>
-                		<b>{{$item->product->title}}</b>	
-                	</li>
-                	<li>
-                		Qty:{{$item->quantity}}
-                	</li>
-                	<li>
-                		Price:{{ $item->price }}
-                	</li>
-                	<li>
-                		Size:{{ $item->size }}
-                	</li>
-                	@endforeach
-          </ul>
 
              </table>
            </div>

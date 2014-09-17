@@ -8,7 +8,15 @@ class OrdersController extends BaseController{
 	}
 
 	public function getIndex(){
-		
-		return View::make('orders')->with('ords',Order::all());
+		$ords=Order::all();
+		return View::make('orders')->with('ords',$ords);
+	}
+
+	public function getItems($id){
+		$order=Order::find($id);
+		if($order){
+			$Orderitem=Orderitem::where('order_id',$id)->get();
+			return View::make('items')->with('Orderitem',$Orderitem);
+		}		
 	}
 }

@@ -11,6 +11,6 @@ class Order extends Eloquent{
 	}
 
 	public function items(){
-		return $this->hasMany('Orderitem');
+		return $this->hasMany('Orderitem','order_id');
 	}
 }
