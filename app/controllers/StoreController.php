@@ -12,8 +12,8 @@ class StoreController extends BaseController{
 
 	public function getIndex(){
 		
-		$products=Product::take(4)->orderBy('created_at','DESC')->get();
-		$products2=Product::take(4)->orderBy('created_at','ASC')->get();
+		$products=Product::all()->random(4);
+		$products2=Product::all()->random(4);
 		return View::make('store.store')->with('products',$products)->with('products2',$products2);
 	}
 
