@@ -28,6 +28,7 @@
                             <img src="{{ $product->backimage }}" alt=""/>
                         </a>
                     </li>
+                    @endif
                     @if($product->image3)
                     <li class="item dib">
                         <a href="#">
