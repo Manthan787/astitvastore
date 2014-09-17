@@ -166,11 +166,13 @@
                     </div>
                 </li>
             </ul>
+            @if($product->availability==1)
             <div class="row actions">
                 <div class="span4">
                     <input type="submit" class="button mustard" value="Add To Cart"></button>
                 </div>
             </div>
+            @endif
         </div>
     
 <br>
