@@ -52,13 +52,16 @@ class ProductsController extends BaseController {
 		Image::make($img->getRealPath())->resize(370,373)->save($path);
 		$product->image='/products/'.$filename;
 		$product->save();
-
+		if(Input::file('backimage')){
 		$bimg=Input::file('backimage');
 		$filename=date('y-m-d-H:i:s').'-'.$bimg->getClientOriginalName();
 		$path=public_path().'/products/'.$filename;
 		Image::make($bimg->getRealPath())->resize(370,373)->save($path);
 		$product->backimage='/products/'.$filename;
 		$product->save();
+		}
+
+
 		if(Input::file('image3')){
 		$img3=Input::file('image3');
 
