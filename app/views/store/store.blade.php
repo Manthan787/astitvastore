@@ -73,11 +73,7 @@ Store
                 </div>
                 </div>
                 @endforeach
-                </div> 
-
-
-        </div>
-       
+                </div>  
        <div class="row twenty_margin_top clearfix">
                 
                @foreach($products2 as $product)
