@@ -129,7 +129,7 @@
                                 <span class="arrow-down">▼</span>
                             </li>
                             <li class="has-children">
-                                <a href="home_2.html">Categories</a>
+                                <a href="#">Categories</a>
                                 <span class="arrow-down">▼</span>
                                 <ul class="span3">
                                 @foreach($catnav as $cat)
@@ -148,7 +148,7 @@
 
                             @if(Auth::check()&&Auth::user()->admin==1)
                             <li class="has-children">
-                                <a href="home_2.html">Administrate</a>
+                                <a href="#">Administrate</a>
                                 <span class="arrow-down">▼</span>
                                 <ul class="span3">
                                 
@@ -162,6 +162,12 @@
                                 
                                 </ul>
                             </li>
+                            @endif
+                            @if(Auth::check()&&Auth::user()->admin==1)
+                            <li>
+                                <a href="/admin/orders">Orders</a>
+                                <span class="arrow-down">▼</span>
+                                
                             @endif
                             
                         </ul>
@@ -672,16 +678,10 @@ Featured Slider Area
 
 -->
 <div class="fullwidth clearfix newsletter_cta twenty_margin_top">
-    <div class="container">
+    <div class="container" align="center">
         <div class="row clearfix">
-            <div class="span8">
-                <h3 class="pull-left uppercase font-light lightgray">subscribe  to newsletter <span class="mustard">get a 10% discount on 1st purchase</span></h3>
-            </div>
-            <div class="span4">
-                <form class="form-newsletter clearfix">
-                    <input type="text" class="input-medium newsletter_input pull-left" placeholder="your email address">
-                    <button type="submit" class="newsletter_button">Submit</button>
-                </form>
+            <div class="span12">
+                <h3 class="pull-left uppercase font-light lightgray">We take Bulk Orders! <span class="mustard">Call Us at +919722208677</span> and Get a Quote</h3>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@ class ProductsController extends BaseController {
 	public function __construct()
 	{
 		Parent::__construct();
-		$this->beforeFilter('csrf',['on'=>'post']);
+		
 		$this->beforeFilter('admin');
 	}	
 
