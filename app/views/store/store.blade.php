@@ -78,6 +78,37 @@ Store
 
         </div>
        
+       <div class="row twenty_margin_top clearfix">
+                
+               @foreach($products2 as $product)
+               <div class="span3 product_image clearfix">
+                    <div class="flip_image">
+                    <a href="/view/{{ $product->id }}">
+                        <div class="front_image">
+                            <img src="{{ $product->image }}" width="220" height="250" alt="" />
+                        </div>
+                        <div class="back_image">
+                            <img src="{{ $product->backimage }}" width="220" height="250" alt="" />
+                        </div>
+                    </a>
+
+                </div>
+                
+                <div class="description clearfix">
+
+                    <p class="white nomargin">
+                        {{ $product->title }}<br/> 
+                    </p>
+                    <span class="price white">
+                       Rs. {{ $product->price }}
+                    </span>
+                </div>
+                </div>
+                @endforeach
+                </div> 
+
+
+        </div>
     <div class="row twenty_margin_top ten_padding_bottom clearfix">
             <div class="span12 clearfix">
                 
