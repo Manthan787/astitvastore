@@ -75,7 +75,7 @@
                         <li class="item dib">
                             <label>
                                 <input type="radio" name="size" value="S"/>
-                                <b>XS</b>
+                                <b>S</b>
                             </label>
                         </li>
                         @else

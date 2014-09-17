@@ -22,7 +22,7 @@ Orders
                 <tbody>
                     <tr>
                         <td>
-                        <a href="/admin/orders/item/{{ $ord->id }}">
+                        <a href="/admin/orders/items/{{ $ord->id }}">
                         <span>{{ $ord->id }}</span>
                         </a>
                         </td>
