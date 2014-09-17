@@ -50,14 +50,14 @@ class ProductsController extends BaseController {
 		$filename=date('y-m-d-H:i:s').'-'.$img->getClientOriginalName();
 		$path=public_path().'/products/'.$filename;
 		Image::make($img->getRealPath())->resize(370,373)->save($path);
-		$product->image='products/'.$filename;
+		$product->image='/products/'.$filename;
 		$product->save();
 
 		$bimg=Input::file('backimage');
 		$filename=date('y-m-d-H:i:s').'-'.$bimg->getClientOriginalName();
 		$path=public_path().'/products/'.$filename;
 		Image::make($bimg->getRealPath())->resize(370,373)->save($path);
-		$product->backimage='products/'.$filename;
+		$product->backimage='/products/'.$filename;
 		$product->save();
 		if(Input::file('image3')){
 		$img3=Input::file('image3');
@@ -65,7 +65,7 @@ class ProductsController extends BaseController {
 		$filename=date('y-m-d-H:i:s').'-'.$img3->getClientOriginalName();
 		$path=public_path().'/products/'.$filename;
 		Image::make($img3->getRealPath())->resize(370,373)->save($path);
-		$product->image3='products/'.$filename;
+		$product->image3='/products/'.$filename;
 		$product->save();
 		}
 
@@ -74,7 +74,7 @@ class ProductsController extends BaseController {
 		$filename=date('y-m-d-H:i:s').'-'.$img4->getClientOriginalName();
 		$path=public_path().'/products/'.$filename;
 		Image::make($img4->getRealPath())->resize(370,373)->save($path);
-		$product->image4='products/'.$filename;
+		$product->image4='/products/'.$filename;
 		$product->save();
 	}
 
