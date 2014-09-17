@@ -107,9 +107,9 @@ Store
                 @endforeach
                 </div> 
 
-
+                </div>
         </div>
-    <div class="row twenty_margin_top ten_padding_bottom clearfix">
+        <div class="row twenty_margin_top ten_padding_bottom clearfix">
             <div class="span12 clearfix">
                 
             </div>
