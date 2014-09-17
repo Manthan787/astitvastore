@@ -109,7 +109,10 @@ Store
         </div>
         <div class="row twenty_margin_top ten_padding_bottom clearfix">
             <div class="span12 clearfix">
-                
+                <a class="load_more uppercase lightgray" href="/category/Kurtas">
+                {{ HTML::image('images/elements/plus.png') }}
+                    View more
+                </a>
             </div>
         </div>
     
