@@ -49,29 +49,19 @@ Store
         <div class="row twenty_margin_top clearfix">
                 
                @foreach($products as $product)
-               
                <div class="span3 product_image clearfix">
-                    @if($product->backimage)
                     <div class="flip_image">
                     <a href="/view/{{ $product->id }}">
                         <div class="front_image">
                             <img src="{{ $product->image }}" width="220" height="250" alt="" />
                         </div>
-                        
+                        @if($product->backimage)
                         <div class="back_image">
                             <img src="{{ $product->backimage }}" width="220" height="250" alt="" />
                         </div>
-                       
+                        @endif
                     </a>
-                    @else
-                    <div>
-                    <a href="/view/{{ $product->id }}">
-                        <div class="front_image">
-                            <img src="{{ $product->image }}" width="220" height="250" alt="" />
-                        </div>
-                    </a>    
-                    </div>
-                    @endif
+
                 </div>
                 
                 <div class="description clearfix">
