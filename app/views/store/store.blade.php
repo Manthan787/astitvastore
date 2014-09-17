@@ -22,11 +22,6 @@ Store
         <br>
     </div>
 
-    <!-- 
-    ==================================================================
-    Featured Banner
-    ==================================================================
-    -->
 
 @stop
 @section('content')
@@ -34,11 +29,7 @@ Store
 
     <div class="container">
         
-        <!-- 
-        ==================================================================
-        Big Products Section
-        ==================================================================
-        -->
+       
 
         <div class="row twenty_margin_top clearfix">
                 <div class="span12 clearfix">
@@ -109,8 +100,8 @@ Store
         </div>
         <div class="row twenty_margin_top ten_padding_bottom clearfix">
             <div class="span12 clearfix">
-                <a class="load_more uppercase lightgray" href="/category/Kurtas">
-                {{ HTML::image('images/elements/plus.png') }}
+                <a class="load_more uppercase lightgray" href="#">
+                    <img src="images/elements/plus.png" alt="" />
                     View more
                 </a>
             </div>
