@@ -48,19 +48,23 @@ class ProductsController extends BaseController {
 		$img=Input::file('image');
 		
 		$filename=date('y-m-d-H:i:s').'-'.$img->getClientOriginalName();
-		Image::make($img->getRealPath())->resize(370,373)->save('public/products/'.$filename);
+		$path=public_path().'/products/'.$filename;
+		Image::make($img->getRealPath())->resize(370,373)->save($path);
 		$product->image='products/'.$filename;
 		$product->save();
 
 		$bimg=Input::file('backimage');
 		$filename=date('y-m-d-H:i:s').'-'.$bimg->getClientOriginalName();
-		Image::make($bimg->getRealPath())->resize(370,373)->save('public/products/'.$filename);
+		$path=public_path().'/products/'.$filename;
+		Image::make($bimg->getRealPath())->resize(370,373)->save($path);
 		$product->backimage='products/'.$filename;
 		$product->save();
 		if(Input::file('image3')){
 		$img3=Input::file('image3');
+
 		$filename=date('y-m-d-H:i:s').'-'.$img3->getClientOriginalName();
-		Image::make($img3->getRealPath())->resize(370,373)->save('public/products/'.$filename);
+		$path=public_path().'/products/'.$filename;
+		Image::make($img3->getRealPath())->resize(370,373)->save($path);
 		$product->image3='products/'.$filename;
 		$product->save();
 		}
@@ -68,7 +72,8 @@ class ProductsController extends BaseController {
 		if(Input::file('image4')){
 		$img4=Input::file('image4');
 		$filename=date('y-m-d-H:i:s').'-'.$img4->getClientOriginalName();
-		Image::make($img4->getRealPath())->resize(370,373)->save('public/products/'.$filename);
+		$path=public_path().'/products/'.$filename;
+		Image::make($img4->getRealPath())->resize(370,373)->save($path);
 		$product->image4='products/'.$filename;
 		$product->save();
 	}
