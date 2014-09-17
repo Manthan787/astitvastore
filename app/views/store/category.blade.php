@@ -14,10 +14,10 @@
                 <div class="flip_image">
                     <a href="/view/{{ $product->id }}">
                         <div class="front_image">
-                            <img src="/{{ $product->image }}" alt="" />
+                            <img src="{{ $product->image }}" alt="" />
                         </div>
                         <div class="back_image">
-                            <img src="/{{ $product->backimage }}" alt="" />
+                            <img src="{{ $product->backimage }}" alt="" />
                         </div>
                     </a>
                 </div>
