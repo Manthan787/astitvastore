@@ -22,6 +22,7 @@
                      {{ HTML::image($product->image,$product->title) }}
                 </div>
                 <ul class="thumbs">
+                    @if($product->backimage)
                     <li class="item dib">
                         <a href="#">
                             <img src="{{ $product->backimage }}" alt=""/>
@@ -194,10 +195,12 @@
                     <div class="front_image">
                        {{ HTML::image($rp->image, $rp->title) }}
                     </div>
+                    @if($rp->backimage)
                     <div class="back_image">
                         {{ HTML::image($rp->backimage, $rp->title) }}
 
                     </div>
+                    @endif
                 </a>
             </div>
             <div class="description clearfix">

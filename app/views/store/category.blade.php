@@ -16,9 +16,11 @@
                         <div class="front_image">
                             <img src="{{ $product->image }}" alt="" />
                         </div>
+                        @if($product->backimage)
                         <div class="back_image">
                             <img src="{{ $product->backimage }}" alt="" />
                         </div>
+                        @endif
                     </a>
                 </div>
                 <div class="description clearfix">

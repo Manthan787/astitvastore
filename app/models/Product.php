@@ -13,7 +13,7 @@ class Product extends Eloquent {
 	'price'=>'required|numeric',
 	'availability'=>'integer',
 	'image'=>'required|image|mimes:jpeg,jpg,png,gif',
-	'backimage'=>'required|image|mimes:jpeg,jpg,png,gif',
+	'backimage'=>'image|mimes:jpeg,jpg,png,gif',
 	'image3'=>'mimes:jpeg,jpg,png,gif',
 	'image4'=>'mimes:jpeg,jpg,png,gif',
 	];

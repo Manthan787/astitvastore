@@ -55,9 +55,11 @@ Store
                         <div class="front_image">
                             <img src="{{ $product->image }}" width="220" height="250" alt="" />
                         </div>
+                        @if($product->backimage)
                         <div class="back_image">
                             <img src="{{ $product->backimage }}" width="220" height="250" alt="" />
                         </div>
+                        @endif
                     </a>
 
                 </div>
