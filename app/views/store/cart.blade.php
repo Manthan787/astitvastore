@@ -68,7 +68,7 @@ Cart
                     <a href="/" class="button darkgrey">back to shopping</a>
                 </div>
                 <div class="text-right span3 offset6">
-                    <a href="address.html" class="button button-fluid mustard">Check Out</a>
+                    <a href="/checkout" class="button button-fluid mustard">Check Out</a>
                 </div>
             </div>
         </div>
